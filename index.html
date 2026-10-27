@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EV Market Performance & Insights Portal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script type="module" src="https://public.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js"></script>
+</head>
+<body>
+    <header class="navbar">
+        <div class="nav-brand">
+            <h2>EV Market Performance & Insights</h2>
+            <span class="badge">Enterprise BI</span>
+        </div>
+        <div class="user-profile">
+            <span>Analyst: <strong>Bhavy Patil</strong></span>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Top KPI Scorecards -->
+        <section class="kpi-grid">
+            <div class="kpi-card">
+                <p class="kpi-title">Total Manufacturers</p>
+                <h3 class="kpi-value">{{ kpis.total_manufacturers }}</h3>
+            </div>
+            <div class="kpi-card">
+                <p class="kpi-title">Total EV Models</p>
+                <h3 class="kpi-value">{{ kpis.total_ev_models }}</h3>
+            </div>
+            <div class="kpi-card">
+                <p class="kpi-title">Total Annual EV Sales</p>
+                <h3 class="kpi-value">{{ kpis.total_annual_sales }}</h3>
+            </div>
+            <div class="kpi-card">
+                <p class="kpi-title">Avg Customer Rating</p>
+                <h3 class="kpi-value">{{ kpis.avg_customer_rating }}</h3>
+            </div>
+            <div class="kpi-card">
+                <p class="kpi-title">Avg Driving Range</p>
+                <h3 class="kpi-value">{{ kpis.avg_driving_range }}</h3>
+            </div>
+            <div class="kpi-card">
+                <p class="kpi-title">Avg Battery Capacity</p>
+                <h3 class="kpi-value">{{ kpis.avg_battery_capacity }}</h3>
+            </div>
+        </section>
+
+        <!-- Tableau Embedding Section -->
+        <section class="tableau-section">
+            <div class="tableau-header">
+                <h3>Executive Interactive Dashboard & Story</h3>
+                <p>Explore vehicle categories, manufacturer market share, battery chemistries, and global manufacturing clusters.</p>
+            </div>
+            <div class="tableau-container">
+                <tableau-viz 
+                    id="tableauViz" 
+                    src="https://public.tableau.com/views/EVMarketPerformanceInsights/Dashboard1"
+                    toolbar="bottom" 
+                    hide-tabs="false">
+                </tableau-viz>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Electric Vehicle Market Analytics Portal | Data Analytics with Tableau Capstone Project</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,45 @@
+================================================================================
+ELECTRIC VEHICLE MARKET PERFORMANCE & INSIGHTS - PROJECT DOCUMENTATION
+Author: Bhavy Patil
+Program: Data Analytics with Tableau
+================================================================================
+
+1. PROBLEM UNDERSTANDING & PERSONA MAPPING
+   - Emily Johnson (EV Market Strategy Director): Category contribution, driving range comparison.
+   - David Chen (Automotive BI Manager): Competitive market share, global production footprint.
+   - Dr. Sarah Williams (Sustainable Mobility Analyst): Battery chemistries, CO2 offset metrics.
+
+2. DATASET SPECIFICATIONS
+   - Total Rows Rendered: 200,000 records
+   - Total Fields: 39 columns (37 base columns + calculated fields)
+   - Scope: Vehicle specs, sales, ratings, geography, sustainability.
+
+3. CALCULATED FIELDS CREATED IN TABLEAU
+   - Calculation1: Sales (Millions) -> [Annual Sales Units] / 1000000
+   - Calculation2: High Efficiency Flag -> IF [Driving Range Km] > 320 AND [Battery Capacity Kwh] < 80 THEN True ELSE False END
+   - Calculation3: Recommended Use Case -> Categorizes vehicles into Urban Commute, Family Daily Use, Highway Long-Distance, Executive.
+   - Calculation4: Formatted Total Sales -> "$" + STR(ROUND(SUM([Annual Sales Units]) / 1000000, 1)) + "M Units"
+   - Calculation5: Efficiency Ratio -> AVG([Driving Range Km]) / AVG([Battery Capacity Kwh])
+
+4. 7 CORE VISUALIZATIONS & 6 KPIS
+   - KPI Banner: 200 Mfgs | 17,980 Models | $1,550.7M Units | 4/5 Rating | 324.54 KM | 78.2 kWh
+   - Sheet 1: EV Category Performance & Distribution (Vertical Bar Chart)
+   - Sheet 2: Market Share by Manufacturer (Horizontal Bar Chart)
+   - Sheet 3: Customer Rating Records by EV Category (Treemap)
+   - Sheet 4: Annual EV Sales Trend by Model Year (Multi-line chart)
+   - Sheet 5: Battery Technology Market Share (Donut / Pie Chart)
+   - Sheet 6: Electric Vehicle Distribution by Manufacturing Country (World Map)
+
+5. TABLEAU STORY SCENES (8 SCENES)
+   - Scene 1: EV Market Performance at a Glance
+   - Scene 2: Understanding EV Category Distribution
+   - Scene 3: Leading Manufacturers Driving the EV Market
+   - Scene 4: Customer Engagement Across EV Categories
+   - Scene 5: Growth Trend in Annual EV Sales
+   - Scene 6: Battery Technology Market Share
+   - Scene 7: Global EV Manufacturing Footprint
+   - Scene 8: Strategic Recommendations & Horizon Outlook
+
+6. PERFORMANCE BENCHMARKS
+   - 200,000 rows loaded smoothly without data sampling.
+   - Dynamic multi-select filtering response time < 850 ms.
